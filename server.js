@@ -90,4 +90,38 @@ app.route('/login')
         });
     });
 
-    
+
+// route for user's dashboard
+app.get('/dashboard', (req, res) => {
+    if (req.session.user && req.cookies.user_sid) {
+		hbsContent.loggedin = true; 
+		hbsContent.userName = req.session.user.username;  
+		console.log(req.session.user.username); 
+		hbsContent.title = "You are logged in"; 
+        res.render('index', hbsContent);
+    } else {
+        res.redirect('/login');
+    }
+});
+
+// route for user logout
+app.get('/logout', (req, res) => {
+    if (req.session.user && req.cookies.user_sid) {
+		hbsContent.loggedin = false; 
+		hbsContent.title = "You are logged out!"; 
+        res.clearCookie('user_sid');
+		console.log(JSON.stringify(hbsContent)); 
+        res.redirect('/');
+    } else {
+        res.redirect('/login');
+    }
+});
+
+
+// route for handling 404 requests(unavailable routes)
+app.use(function (req, res, next) {
+  res.status(404).send("Sorry can't find that!")
+});
+
+// start the express server
+app.listen(app.get('port'), () => console.log(`App started on port ${app.get('port')}`));
