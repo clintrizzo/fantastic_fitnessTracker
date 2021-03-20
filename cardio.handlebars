@@ -3,17 +3,20 @@
   <div id="myDropdown" class="dropdown-content">
     
     
-    <span class="input-group-text" id="inputGroup-sizing-default"> Name: <input type="text"> </span>
+    <p> Name: <input type="text" id="name"> </p>
     <hr>
-    <span class="input-group-text" id="inputGroup-sizing-default"> Distance: <input type="text"> </span>
+    <p> Distance: <input type="text" id="distance"> </p>
     <hr>
-    <span class="input-group-text" id="inputGroup-sizing-default"> Duration: <input type="text"> </span>
+    <p> Duration: <input type="text" id="duration"> </p>
     <hr>
+    <input type="submit" id="submit" value="Submit">
+   
+   
     
   </div>
 </div>
 
-<!-- css
+
 /* Dropdown Button */
 .dropbtn {
   background-color: purple;
@@ -46,13 +49,25 @@
   margin: 5px;
 }
 
-/* Links inside the dropdown */
-.dropdown-content span, input {
-  color: black;
-  padding: 0px 5px;
-  text-decoration: none;
-  display: block;
+.dropdown-content input {
+  float: right;
+  margin-left: 2px;
+  padding-bottom: 2px;
 }
+
+#submit {
+  color: yellow;
+  background-color: black;
+  position: absolute;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+#submit:hover {
+  background-color: purple;
+}
+
+
 
 /* Change color of dropdown links on hover */
 /*.dropdown-content span:hover {background-color: add-color;} */
@@ -60,24 +75,19 @@
 /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
 .show {display:block;} -->
 
-<!-- JavaScript 
+
 /* When the user clicks on the button, 
 toggle between hiding and showing the dropdown content */
 function myFunction() {
   document.getElementById("myDropdown").classList.toggle("show");
+  
+  var name = document.getElementById("name").value;
+  var distance = document.getElementById("distance").value;
+  var duration = document.getElementById("duration").value;
+  submitOK = "true";
+
 }
 
-// Close the dropdown if the user clicks outside of it
-window.onclick = function(event) {
-  if (!event.target.matches('.dropbtn')) {
-    var dropdowns = document.getElementsByClassName("dropdown-content");
-    var i;
-    for (i = 0; i < dropdowns.length; i++) {
-      var openDropdown = dropdowns[i];
-      if (openDropdown.classList.contains('show')) {
-        openDropdown.classList.remove('show');
-      }
-    }
-  }
-}
--->
+
+
+
