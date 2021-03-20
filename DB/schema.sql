@@ -1,0 +1,2 @@
+DROP DATABASE IF EXISTS fantastic_fitnessTracker;
+CREATE DATABASE fantastic_fitnessTracker;
