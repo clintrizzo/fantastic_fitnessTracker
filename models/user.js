@@ -1,25 +1,25 @@
 var Sequelize = require('sequelize');
 var bcrypt = require('bcrypt');
-	
+
 // create a sequelize instance with our local postgres database information.
 const sequelize = new Sequelize('ourDatabase', 'root', 'password', {
-	host:'localhost',
-	port: 3306,
-	dialect:'mysql',
-	pool:{
-		max: 5,
-		min: 0,
-		acquire: 30000,
-		idle: 10000
-	}, 
-	operatorsAliases: false
+    host: 'localhost',
+    port: 3000,
+    dialect: 'mysql',
+    pool: {
+        max: 5,
+        min: 0,
+        acquire: 30000,
+        idle: 10000
+    },
+    operatorsAliases: false
 });
 
 //setup user table
 var user = sequelize.define('users', {
     id: {
         type: Sequelize.INTEGER,
-        unique: true, 
+        unique: true,
         allowNull: false,
         primaryKey: true,
         autoIncrement: true
@@ -38,8 +38,8 @@ user.beforeCreate((user, options) => {
     user.password = bcrypt.hashSync(user.password, salt);
 });
 
-user.prototype.validPassword = function(password){
-        return bcrypt.compareSync(password, this.password);
+user.prototype.validPassword = function(password) {
+    return bcrypt.compareSync(password, this.password);
 };
 
 //create all defined tables in the specified database
