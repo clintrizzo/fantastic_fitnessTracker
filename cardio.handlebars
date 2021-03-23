@@ -1,93 +1,47 @@
-<div class="dropdown">
-  <button onclick="myFunction()" class="dropbtn"> CARDIOVASCULAR </button>
-  <div id="myDropdown" class="dropdown-content">
+<body>
+  <div class="content">
+<div class="row-lg-6">
+     <div class="container">
+
+  <button onclick="cardiovascular()" class="dropbtnCardio"> CONDITION FITNESS </button>
+  <div id="myCardio" class="dropdown-content">
     
+    <form class="cardioForm">
+    <p> Exercise: <input type="text" id="name" placeholder="Cardio"> </p>
+    <hr>
+    <p> Distance: <input type="text" id="distance" placeholder="Miles"> </p>
+    <hr>
+    <p> Duration: <input type="text" id="duration" placeholder="Time"> </p>
+    <hr>
+    <input type="submit" id="cardioSubmit" value="Submit" />
+    </form>
+      
+    </div>
+
+    <div class="row-lg-6">
+      <div class="container">
+        
+     <button onclick="weights()" class="dropbtnStrength"> STRENGTH FITNESS </button>
+  <div id="myStrength" class="dropdown-content">
     
-    <p> Name: <input type="text" id="name"> </p>
+    <form class="strengthForm">
+    <p> Exercise: <input type="text" id="exercise" placeholder="Muscle/Workout"> </p>
     <hr>
-    <p> Distance: <input type="text" id="distance"> </p>
+    <p> Weight: <input type="text" id="weight" placeholder="Pounds"> </p>
     <hr>
-    <p> Duration: <input type="text" id="duration"> </p>
+    <p> Sets: <input type="text" id="sets" placeholder="Number of Sets"> </p>
     <hr>
-    <input type="submit" id="submit" value="Submit">
+    <p> Reps: <input type="text" id="reps" placeholder="Repition"> </p>
+    <hr>
+    <p> Rest: <input type="text" id="rest" placeholder="Rest Time (min/sec)" </p>
+    <hr>
+      
+    <input type="submit" id="strengthSubmit" value="Submit" />
+    </form>
    
-   
-    
+      </div>
+    </div>
+   </div>
   </div>
-</div>
-
-
-/* Dropdown Button */
-.dropbtn {
-  background-color: purple;
-  color: yellow;
-  padding: 16px;
-  font-size: 20px;
-  border: none;
-  cursor: pointer;
-}
-
-/* Dropdown button on hover & focus */
-.dropbtn:hover, .dropbtn:focus {
-  background-color: black;
-}
-
-/* The container <div> - needed to position the dropdown content */
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-/* Dropdown Content (Hidden by Default) */
-.dropdown-content {
-  display: none;
-  background-color: #f1f1f1;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-  padding: 5px;
-  margin: 5px;
-}
-
-.dropdown-content input {
-  float: right;
-  margin-left: 2px;
-  padding-bottom: 2px;
-}
-
-#submit {
-  color: yellow;
-  background-color: black;
-  position: absolute;
-  margin-top: 10px;
-  cursor: pointer;
-}
-
-#submit:hover {
-  background-color: purple;
-}
-
-
-
-/* Change color of dropdown links on hover */
-/*.dropdown-content span:hover {background-color: add-color;} */
-
-/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
-.show {display:block;} -->
-
-
-/* When the user clicks on the button, 
-toggle between hiding and showing the dropdown content */
-function myFunction() {
-  document.getElementById("myDropdown").classList.toggle("show");
-  
-  var name = document.getElementById("name").value;
-  var distance = document.getElementById("distance").value;
-  var duration = document.getElementById("duration").value;
-  submitOK = "true";
-
-}
-
-
-
+      </body>
 
