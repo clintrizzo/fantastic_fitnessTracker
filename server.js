@@ -1,52 +1,34 @@
-var express = require('express');
-var bodyParser = require('body-parser');
-var cookieParser = require('cookie-parser');
-var session = require('express-session');
-var morgan = require('morgan');
-var User = require('./models/user');
-var hbs = require('express-handlebars');
-var path = require('path');
-
+const path = require('path');
+const express = require('express');
+const session = require('express-session');
+const exphbs = require('express-handlebars');
 const routes = require('./routes');
-const { nextTick } = require('node:process');
 
-// invoke an instance of express application.
-var app = express();
-app.set('PORT', 3000);
-app.use('/', routes);
-app.use(morgan('dev'));
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(cookieParser());
-app.use(session({
-    key: 'user_sid',
-    secret: 'somesecret',
+const sequelize = require('./config/connection');
+const SequelizeStore = require('connect-session-sequelize')(session.Store);
+
+const app = express();
+const PORT = process.env.PORT || 3001;
+
+const sess = {
+    secret: 'Super secret secret',
+    cookie: {},
     resave: false,
-    saveUninitialized: false,
-    cookie: {
-        expires: 600000
-    }
-}));
-
-app.engine('hbs', hbs({ extname: 'hbs', defaultLayout: 'layout', layoutsDir: __dirname + '/view/layouts' }));
-app.set('view engine', 'hbs');
-
-app.use((req, res, next) => {
-    if (req.cookies.user_sid && !req.session.user) {
-        res.clearCookie('user_sid');
-    }
-    next();
-});
-
-var hbsContent = { userName: '', loggedin: false, title: "You are not logged in", body: "hello" };
-
-//middle ware function to check for logged in users
-var sessionChecker = (req, res, next) => {
-    if (req.session.user && req.cookes.user_sid) {
-        res.redirect('/dashboard');
-    } else {
-        next();
-    }
+    saveUninitialized: true,
+    store: new SequelizeStore({
+        db: sequelize
+    })
 };
 
-// start the express server
-app.listen(app.get('port'), () => console.log(`App started on port ${app.get('port')}`));
+app.use(session(sess));
+app.set('view engine', 'handlebars');
+
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(express.static(path.join(__dirname, 'public')));
+
+app.use(routes);
+
+sequelize.sync({ force: false }).then(() => {
+    app.listen(PORT, () => console.log('Now listening'));
+});
