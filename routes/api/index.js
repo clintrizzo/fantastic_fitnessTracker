@@ -1,13 +1,6 @@
 const router = require('express').Router();
+const userRoutes = require('./loginRoutes');
 
-const loginRoutes = require('./loginRoutes');
-const newUserRoutes = require('./newUserRoutes');
-const cardioRoutes = require('./cardioRoutes');
-const weightsRoutes = require('./weightsRoutes');
-
-router.use('/loginRoutes', loginRoutes);
-router.use('/newUser', newUserRoutes);
-router.use('/cardio', cardioRoutes);
-router.use('/weights', weightsRoutes);
+router.use('/users', userRoutes);
 
 module.exports = router;
