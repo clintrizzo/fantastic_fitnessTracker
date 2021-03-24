@@ -5,7 +5,7 @@ const loginFormHandler = async(event) => {
     const password = document.querySelector('#password-login').value.trim();
 
     if (email && password) {
-        const response = await fetch('/api/users/login', { //need to change
+        const response = await fetch('/api/loginRoutes', { //need to change
             method: 'POST',
             body: JSON.stringify({ email, password }),
             headers: { 'Content-Type': 'application/json' },
@@ -30,7 +30,7 @@ const signupFormHandler = async(event) => {
     const password = document.querySelector('#userQuestion3').value.trim();
 
     if (name && email && password) {
-        const response = await fetch('/api/users', {
+        const response = await fetch('/newuser', {
             method: 'POST',
             body: JSON.stringify({ name, email, password }),
             headers: { 'Content-Type': 'application/json' },
