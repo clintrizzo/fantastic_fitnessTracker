@@ -1,0 +1,106 @@
+<html>
+    <head>
+		<title>
+        {{# if loggedin}}
+			Welcome {{userName}}
+		{{else }}
+			NodeJS
+		{{/if}}
+		</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    </head>
+
+    <style>
+      body{
+        background-color: rgb(221, 214, 214);
+      }
+      nav{
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        background-color: lightgray;
+      }
+      .navbar-brand{
+        font-size: 50px;
+      }
+      .nav-item{
+        font-size: 20px;
+        float: right;
+        text-decoration: underline;
+      }
+      h5{
+        font-size: 60px;
+        font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+      }
+      p{
+        font-size: 25px;
+        color: black;
+        font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+      }
+      img{
+        opacity: .6;
+      }
+    </style>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/">Fantastic Fitness</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/login">Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="//signup">New User</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/aboutus">Meet The Team</a>
+        </li>
+    </div>
+    </div>
+</nav>
+<center>
+  <br>
+<div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active" data-bs-interval="10000">
+      <img src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/mh-mature-adult-man-working-out-at-personal-training-royalty-free-image-1129302201-1557253953.jpg?crop=0.670xw:1.00xh;0.194xw,0&resize=768:*" style="height:800; width:00" class="d-block w-75" alt="fantastic fitness">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Welcome to the Fantastic Fitness Tracker App!</h5>
+        <p>We are excited to have you and are excited for you to start your journey! Take a look at what the app has to offer in the next view slides!</p>
+      </div>
+    </div>
+    <div class="carousel-item" data-bs-interval="2000">
+      <img src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/bench-press-spot-1571829590.jpg?resize=768:*" style="height:800; width:300" class="d-block w-75" alt="bench press">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Weightlifting</h5>
+        <p>Our team built a perfect way for the user to be able to create their own workouts. As well as being able to save past workouts to go back on. No more notebooks, you'll be able to see the progression through your reps and weight</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="https://www.oathletik.com/wp-content/uploads/OA-marchblog-Img4.jpg" style="height:800; width:300" class="d-block w-75" alt="cardio">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Cardio</h5>
+        <p>Just like the weight lifting if the user chooses cardio for that particular day, the user can choose which cardio (running, eliptical, cycling, ect) and then save their time and distance for that workout.</p>
+      </div>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+</center>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+    </body>
+</html>
