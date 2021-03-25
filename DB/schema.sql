@@ -1,5 +1,4 @@
 DROP DATABASE IF EXISTS fantastic_fitnesstracker_db;
-DROP DATABASE IF EXISTS fantastic_fitnesstracker;
 CREATE DATABASE fantastic_fitnesstracker_db;
 
 USE fantastic_fitnesstracker_db
