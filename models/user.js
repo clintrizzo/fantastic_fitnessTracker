@@ -1,21 +1,19 @@
 const { Model, DataTypes } = require('sequelize');
 const bcrypt = require('bcrypt');
 const sequelize = require('../config/connection');
+const { condition } = require('sequelize');
+const orm = require('../config/orm');
 
 class User extends Model {
     checkPassword(loginPw) {
         return bcrypt.compareSync(loginPw, this.password);
     }
-}
+} 
 
+//for user name login
 User.init({
-    id: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-        primaryKey: true,
-        autoIncrement: true,
-    },
-    name: {
+    
+    user_name: {
         type: DataTypes.STRING,
         allowNull: false,
     },
@@ -52,4 +50,22 @@ User.init({
     modelName: 'user',
 });
 
+const condition_fitness = {
+	selectAll: function () {
+		return orm.selectAll('condition_fitness');
+	},
+	// The variables cols and vals are arrays.
+	insertOne: function (cols, vals) {
+		return orm.insertOne('condition_fitness', cols, vals);
+	},
+	updateOne: function (objColVals, condition) {
+		return orm.updateOne('condition_fitness', objColVals, condition);
+	},
+	deleteOne: function (condition) {
+		return orm.deleteOne('condition_fitness', condition);
+	}
+};
+
+
 module.exports = User;
+module.exports = condition_fitness;
