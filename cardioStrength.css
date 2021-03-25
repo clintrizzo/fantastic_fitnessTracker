@@ -1,0 +1,153 @@
+body {
+  background-color: #7777;
+}
+
+.li-inline {
+  display: inline;
+}
+
+.navbar {
+  width: 100%;
+  position: relative;
+  }
+
+.nav-item {
+  margin: 30px;
+  margin-top: 1%;
+  display: inline;
+  float: right;
+  
+}
+
+.nav-item a {
+  color: #555;
+}
+
+.hero {
+  position: relative;
+  display: inline;
+}
+
+.app-title {
+  font-size: 3rem;
+  padding: 25px;
+  display: inline;
+  color: #038
+}
+
+.content {
+  max-width: px;
+  margin: auto;
+  padding: 10px;
+  
+}
+
+/* Dropdown Button */
+.dropbtnCardio {
+  background-color: red;
+  color: white;
+  padding: 16px;
+  font-size: 20px;
+  border: none;
+  cursor: pointer;
+  float: left;
+  display: inline;
+  postion: relative;
+}
+
+.dropbtnStrength {
+  background-color: red;
+  color: white;
+  padding: 16px;
+  font-size: 20px;
+  border: none;
+  cursor: pointer;
+  float: left;
+  display: inline;
+  position: relative;
+}
+
+.strengthForm {
+  float: left;
+}
+
+.cardioForm {
+  float: left;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.btn-group {
+  display: none;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+ 
+}
+
+.btn-group input {
+  float: right;
+  margin-left: 2px;
+  padding-bottom: 2px;
+}
+
+#cardioSubmit, #strengthSubmit {
+  color: red;
+  background-color: black;
+  position: absolute;
+  cursor: pointer;
+}
+
+#cardioSubmit:hover, #strengthSubmit:hover {
+  background-color: yellow;
+}
+
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {display:block;} -->
+
+/* Condition and Strength button placed in top-left corner of image */
+.top-left {
+  position: absolute;
+  top: 30px;
+  left: 16px;
+}
+
+/* Top right text */
+.top-right {
+  position: absolute;
+  right: 16px;
+  text-align: right;
+  font-size: 2rem;
+  font-weight: 900;
+  word-spacing: 10px;
+  letter-spacing: 1px;
+}
+
+.bottom-left {
+  position: absolute;
+  bottom: 150px;
+  left: 16px;
+  letter-spacing: 1px;
+  line-height: 20px
+}
+
+.top-right p {
+  font-size: 20px;
+  font-weight: normal;
+  word-spacing: 5px;
+  letter-spacing: 1px;
+  line-height: 5px;
+}
+
+.container {
+  position: relative;
+  text-align: left;
+  color: white;
+}
+
+.centered {
+  position: absolute;
+  top: 30px;
+  left: 300px;
+  
+}
+
