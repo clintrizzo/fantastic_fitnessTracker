@@ -1,32 +1,54 @@
 const path = require('path');
 const express = require('express');
 const session = require('express-session');
-const handlebars = require('express-handlebars');
+const exphbs = require('express-handlebars');
 const routes = require('./routes');
 const sequelize = require('./config/connection');
+const hbs = require('hbs');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-app.set('view engine', 'handlebars');
-app.engine('handlebars', handlebars({
-    layoutsDir: __dirname + '/views'
+const sess = {
+    secret: 'super super super secret thing',
+    cookie: {
+        // Session will automatically expire in 10 minutes
+        expires: 100 * 60 * 1000
+    },
+    resave: true,
+    rolling: true,
+    saveUninitialized: true,
+    store: new SequelizeStore({
+        db: sequelize
+    }),
+};
+
+app.use(session(sess));
+
+app.set('view engine', 'hbs');
+app.engine('hbs', exphbs({
+    extname: 'hbs',
+    defaultLayout: 'home',
+    layoutsDir: __dirname + '/views/layouts',
+    partialDir: __dirname + '/views/partial'
 }))
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static('public'));
+app.use(express.static(__dirname + '/public'));
 app.use(session({
     secret: 'LONG_RANDOM_STRING_HERE',
     resave: true,
     saveUninitialized: true
 }));
 
-app.get('/', (req, res) => { "index.handlebars", res.render('main', { layout: 'layout' }) });
+app.get('/', (req, res) => { res.render("main") });
+app.get('/login', (req, res) => { res.render("login") });
+app.get('/signup', (req, res) => { res.render("signup") });
 
 app.use(routes);
 
 sequelize.sync({ force: true }).then(() => {
-    app.listen(PORT, () => console.log('Now listening'));
+    app.listen(PORT, () => console.log('Now listening to port 3001'));
 });
