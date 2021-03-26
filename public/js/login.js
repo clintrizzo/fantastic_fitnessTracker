@@ -25,9 +25,6 @@ const signupFormHandler = async(event) => {
     const name = document.querySelector('#name-signup').value.trim();
     const email = document.querySelector('#email-signup').value.trim();
     const password = document.querySelector('#password-signup').value.trim();
-    const password = document.querySelector('#userQuestion1').value.trim();
-    const password = document.querySelector('#userQuestion2').value.trim();
-    const password = document.querySelector('#userQuestion3').value.trim();
 
     if (name && email && password) {
         const response = await fetch('/newuser', {
@@ -37,7 +34,7 @@ const signupFormHandler = async(event) => {
         });
 
         if (response.ok) {
-            document.location.replace('/profile'); //need to change
+            document.location.replace('cardioStrength'); //need to change
         } else {
             alert(response.statusText);
         }
