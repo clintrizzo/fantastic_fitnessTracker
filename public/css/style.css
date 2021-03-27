@@ -1,0 +1,159 @@
+p {
+    color: white;
+}
+
+h5 {
+    color: white;
+    font-size: x-large;
+    text-decoration: underline;
+}
+
+.login {
+    border-width: 2px;
+    border-radius: 10px;
+    border-style: solid;
+    box-shadow: 6px 8px black;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    margin-left: 200px;
+    margin-right: 200px;
+}
+
+.signup {
+    border-width: 2px;
+    border-radius: 10px;
+    border-style: solid;
+    box-shadow: 6px 8px black;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-left: 200px;
+    margin-right: 200px;
+}
+
+img {
+    height: 400px;
+    width: 600px;
+    opacity: .6;
+}
+
+.carousel-caption {
+    background-color: lightgray;
+}
+
+#title {
+    font-size: 55px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin-left: 25px;
+    float: 50%
+}
+
+nav {
+    font-size: x-large;
+    text-decoration: underline;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: lightslategray;
+}
+
+#link {
+    margin-left: 100px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: white;
+}
+
+.carousel-caption {
+    background-color: lightgray;
+}
+
+.placeholder {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: large;
+    transition: all 2s;
+    font-size: 1.55rem;
+    color: lighten;
+}
+
+input {
+    border-width: 2px;
+    border-radius: 10px;
+    border-style: solid;
+    box-shadow: 3.5px 5.5px black;
+}
+
+.form-input {
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    width: 500px;
+    height: 50px;
+    margin-top: 15px;
+}
+
+.btn {
+    letter-spacing: 0;
+    width: 200px;
+}
+
+.btn:hover,
+.btn:active {
+    letter-spacing: 5px;
+}
+
+.btn:after,
+.btn:before {
+    backface-visibility: hidden;
+    border: 1px solid rgba(#fff, 0);
+    bottom: 0px;
+    content: " ";
+    display: block;
+    margin: 0 auto;
+    position: relative;
+    transition: all 280ms ease-in-out;
+    width: 0;
+}
+
+.btn:hover:after,
+.btn:hover:before {
+    backface-visibility: hidden;
+    border-color: #fff;
+    transition: width 350ms ease-in-out;
+    width: 70%;
+}
+
+.btn:hover:before {
+    bottom: auto;
+    top: 0;
+    width: 70%;
+}
+
+#link {
+    letter-spacing: 0;
+    color: white;
+}
+
+#link:hover,
+#link:active {
+    letter-spacing: 3px;
+}
+
+#link:after,
+#link:before {
+    backface-visibility: hidden;
+    border: 1px solid rgba(#fff, 0);
+    bottom: 0px;
+    display: block;
+    margin: 0 auto;
+    position: relative;
+    transition: all 200ms ease-in-out;
+    width: 0;
+}
+
+#link:hover:after,
+#link:hover:before {
+    backface-visibility: hidden;
+    border-color: #fff;
+    transition: width 400ms ease-in-out;
+}
+
+#link:hover:before {
+    bottom: auto;
+    top: 0;
+}
