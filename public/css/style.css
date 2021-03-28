@@ -6,6 +6,10 @@ p {
     color: white;
 }
 
+h2 {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
 h5 {
     color: white;
     font-size: x-large;
@@ -17,7 +21,7 @@ h5 {
     border-radius: 10px;
     border-style: solid;
     box-shadow: 6px 8px black;
-    padding-top: 50px;
+    padding-top: 10px;
     padding-bottom: 50px;
     margin-left: 200px;
     margin-right: 200px;
@@ -205,23 +209,31 @@ body {
 }
 
 .card {
-    color: white;
     float: left;
     padding: 10px;
-    border-radius: 100px;
     margin: 10px;
     height: 500px;
-    border-radius: 15px 50px;
+    box-shadow: 6px 8px black;
+    border-radius: 30px;
 }
 
 .person {
     width: 235px;
     height: 250px;
-    border-radius: 30px;
+    border-radius: 50px;
+    opacity: 7;
+}
+
+h3 {
+    padding-top: 5px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: black
 }
 
 .card p {
-    font-size: 18px;
+    font-size: 23px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
 }
 
 .cardContainer:after {
