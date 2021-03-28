@@ -85,9 +85,44 @@ input {
     margin-top: 15px;
 }
 
+a:link {
+    color: black;
+}
+
+a:visited {
+    color: black;
+}
+
+a:hover {
+    color: black;
+}
+
+a:active {
+    color: black;
+}
+
+#submit {
+    background-color: white;
+    width: 220px;
+}
+
 .btn {
-    letter-spacing: 0;
-    width: 200px;
+    text-decoration: none;
+    border: none;
+    padding: 12px 40px;
+    font-size: 25px;
+    background-color: white;
+    color: #fff;
+    border-radius: 10px;
+    box-shadow: 7px 6px 28px 1px rgba(0, 0, 0, 0.24);
+    cursor: pointer;
+    outline: none;
+    transition: 0.2s all;
+}
+
+.submit:active {
+    transform: scale(0.98);
+    box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
 }
 
 .btn:hover,
@@ -127,7 +162,6 @@ input {
     color: white;
     margin-left: 100px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    color: white;
 }
 
 #link:hover,
@@ -249,9 +283,39 @@ body {
     transition: all 265ms ease-in;
 }
 
+@media screen and (max-width: 1000px) {
+    img {
+        height: 400px;
+        width: 500px;
+        opacity: .6;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    img {
+        height: 500px;
+        width: 600px;
+        opacity: .6;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    #title,
+    .nav {
+        font-size: 25px;
+    }
+}
+
 @media screen and (min-width: 1500px) {
     .person {
         width: 280px;
+        height: 250px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .person {
+        width: 320px;
         height: 250px;
     }
 }
@@ -262,16 +326,32 @@ body {
     }
 }
 
-@media screen and (min-width: 600px) {
-    img {
-        height: 400px;
-        width: 500px;
-        opacity: .6;
-    }
-}
-
 @media screen and (max-width: 600px) {
     .card {
         width: 100%;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .login,
+    .signup {
+        border-width: none;
+        border-radius: none;
+        border-style: none;
+        box-shadow: none;
+        padding-top: none;
+        padding-bottom: none;
+        margin-left: none;
+        margin-right: none;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .form-input {
+        text-align: center;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        height: 50px;
+        margin-top: 15px;
+        width: 200px;
     }
 }
