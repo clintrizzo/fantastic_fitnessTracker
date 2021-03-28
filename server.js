@@ -46,8 +46,12 @@ app.use(session({
 app.get('/', (req, res) => { res.render("main") });
 app.get('/login', (req, res) => { res.render("login") });
 app.get('/signup', (req, res) => { res.render("signup") });
+app.get('/aboutUs', (req, res) => { res.render("aboutUs") });
+app.get('/dashboard', (req, res) => { res.render("dashboard") });
 
 app.use(routes);
+
+var Users = [];
 
 sequelize.sync({ force: true }).then(() => {
     app.listen(PORT, () => console.log('Now listening to port 3001'));
