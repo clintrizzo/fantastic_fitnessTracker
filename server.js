@@ -51,8 +51,6 @@ app.get('/dashboard', (req, res) => { res.render("dashboard") });
 
 app.use(routes);
 
-var Users = [];
-
 sequelize.sync({ force: true }).then(() => {
     app.listen(PORT, () => console.log('Now listening to port 3001'));
 });
