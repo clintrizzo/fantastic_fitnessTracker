@@ -6,10 +6,8 @@ const routes = require('./routes');
 const sequelize = require('./config/connection');
 const hbs = require('hbs');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
-
 const app = express();
 const PORT = process.env.PORT || 3001;
-
 const sess = {
     secret: 'super super super secret thing',
     cookie: {
@@ -23,17 +21,15 @@ const sess = {
         db: sequelize
     }),
 };
-
 app.use(session(sess));
-
 app.set('view engine', 'hbs');
 app.engine('hbs', exphbs({
     extname: 'hbs',
     defaultLayout: 'home',
     layoutsDir: __dirname + '/views/layouts',
-    partialDir: __dirname + '/views/partial'
+    partialDir: __dirname + '/views/partial',
+    //cardioDir: __dirname + '/views/cardio'
 }))
-
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(__dirname + '/public'));
@@ -42,13 +38,12 @@ app.use(session({
     resave: true,
     saveUninitialized: true
 }));
-
 app.get('/', (req, res) => { res.render("main") });
 app.get('/login', (req, res) => { res.render("login") });
 app.get('/signup', (req, res) => { res.render("signup") });
-
+//app.get('/cardioStrength', (req, res) => { res.render("cardioStrength") });
 app.use(routes);
-
+//app.use('/api/cardioStrength', require('./routes/cardioStrength'));
 sequelize.sync({ force: true }).then(() => {
-    app.listen(PORT, () => console.log('Now listening to port 3001'));
+    app.listen(PORT, () => console.log('Now listening to port" 3001'));
 });

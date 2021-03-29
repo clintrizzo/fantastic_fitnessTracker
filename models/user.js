@@ -7,7 +7,7 @@ class User extends Model {
     checkPassword(loginPw) {
         return bcrypt.compareSync(loginPw, this.password);
     }
-} 
+}
 //for user name login
 User.init({
     user_name: {
@@ -47,32 +47,19 @@ User.init({
     modelName: 'user',
 });
 const condition_fitness = {
-    selectAll: function () {
+    selectAll: function() {
         return orm.selectAll('condition_fitness');
     },
     // The variables cols and vals are arrays.
-    insertOne: function (cols, vals) {
+    insertOne: function(cols, vals) {
         return orm.insertOne('condition_fitness', cols, vals);
     },
-    updateOne: function (objColVals, condition) {
+    updateOne: function(objColVals, condition) {
         return orm.updateOne('condition_fitness', objColVals, condition);
     },
-    deleteOne: function (condition) {
+    deleteOne: function(condition) {
         return orm.deleteOne('condition_fitness', condition);
     }
 };
 module.exports = User;
 module.exports = condition_fitness;
-
-
-
-
-
-
-
-
-
-
-
-
-
