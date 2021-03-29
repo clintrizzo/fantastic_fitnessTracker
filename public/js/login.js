@@ -12,7 +12,7 @@ const loginFormHandler = async(event) => {
         });
 
         if (response.ok) {
-            document.location.replace('/profile');
+            document.location.replace('/dashboard');
         } else {
             alert(response.statusText);
         }
@@ -34,7 +34,7 @@ const signupFormHandler = async(event) => {
         });
 
         if (response.ok) {
-            document.location.replace('cardioStrength'); //need to change
+            document.location.replace('dashboard'); //need to change
         } else {
             alert(response.statusText);
         }
