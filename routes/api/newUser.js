@@ -30,7 +30,7 @@ router.get('/signup', async(req, res) => {
 
         const project = projectData.get({ plain: true });
 
-        res.render('/', {
+        res.render('dashboard', {
             ...project,
             logged_in: req.session.logged_in
         });
@@ -41,11 +41,11 @@ router.get('/signup', async(req, res) => {
 
 router.get('/login', (req, res) => {
     if (req.session.logged_in) {
-        res.redirect('/workout');
+        res.redirect('dashboard');
         return;
     }
 
-    res.render('/login');
+    res.render('dashboard');
 });
 
 module.exports = router;

@@ -1,5 +1,13 @@
+.background {
+    background-color: cadetblue;
+}
+
 p {
     color: white;
+}
+
+h2 {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 h5 {
@@ -13,7 +21,7 @@ h5 {
     border-radius: 10px;
     border-style: solid;
     box-shadow: 6px 8px black;
-    padding-top: 50px;
+    padding-top: 10px;
     padding-bottom: 50px;
     margin-left: 200px;
     margin-right: 200px;
@@ -31,8 +39,8 @@ h5 {
 }
 
 img {
-    height: 400px;
-    width: 600px;
+    height: 750px;
+    width: 800px;
     opacity: .6;
 }
 
@@ -48,20 +56,14 @@ img {
 }
 
 nav {
-    font-size: x-large;
+    font-size: 35px;
     text-decoration: underline;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: lightslategray;
 }
 
-#link {
-    margin-left: 100px;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    color: white;
-}
-
 .carousel-caption {
-    background-color: lightgray;
+    background-color: rgb(214, 205, 205);
 }
 
 .placeholder {
@@ -87,9 +89,44 @@ input {
     margin-top: 15px;
 }
 
+a:link {
+    color: black;
+}
+
+a:visited {
+    color: black;
+}
+
+a:hover {
+    color: black;
+}
+
+a:active {
+    color: black;
+}
+
+#submit {
+    background-color: white;
+    width: 220px;
+}
+
 .btn {
-    letter-spacing: 0;
-    width: 200px;
+    text-decoration: none;
+    border: none;
+    padding: 12px 40px;
+    font-size: 25px;
+    background-color: white;
+    color: #fff;
+    border-radius: 10px;
+    box-shadow: 7px 6px 28px 1px rgba(0, 0, 0, 0.24);
+    cursor: pointer;
+    outline: none;
+    transition: 0.2s all;
+}
+
+.submit:active {
+    transform: scale(0.98);
+    box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
 }
 
 .btn:hover,
@@ -127,6 +164,8 @@ input {
 #link {
     letter-spacing: 0;
     color: white;
+    margin-left: 100px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 #link:hover,
@@ -156,4 +195,175 @@ input {
 #link:hover:before {
     bottom: auto;
     top: 0;
+}
+
+
+/*about us page*/
+
+body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.card {
+    float: left;
+    padding: 10px;
+    margin: 10px;
+    height: 500px;
+    box-shadow: 6px 8px black;
+    border-radius: 30px;
+}
+
+.person {
+    width: 235px;
+    height: 250px;
+    border-radius: 50px;
+    opacity: 7;
+}
+
+h3 {
+    padding-top: 5px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: black
+}
+
+.card p {
+    font-size: 23px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+}
+
+.cardContainer:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.social-icons {
+    padding: 0;
+    list-style: none;
+}
+
+.social-icons li {
+    display: inline-block;
+    margin: 0.25em;
+    position: relative;
+    font-size: 35px;
+}
+
+.social-icons i {
+    color: #fff;
+    position: absolute;
+    top: 0.2em;
+    left: .3em;
+    transition: all 265ms ease-out;
+}
+
+.social-icons a {
+    display: inline-block;
+}
+
+.social-icons a:before {
+    transform: scale(1);
+    -ms-transform: scale(1);
+    -webkit-transform: scale(1);
+    content: " ";
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    display: block;
+    background: linear-gradient(45deg, rgb(62, 62, 110), rgb(144, 144, 209));
+    transition: all 265ms ease-out;
+}
+
+.social-icons a:hover:before {
+    transform: scale(0);
+    transition: all 265ms ease-in;
+}
+
+.social-icons a:hover i {
+    transform: scale(2.0);
+    -ms-transform: scale(2.0);
+    -webkit-transform: scale(2.0);
+    color: blue;
+    background: -webkit-linear-gradient(45deg, rgb(255, 255, 255), rgb(144, 144, 209));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: all 265ms ease-in;
+}
+
+@media screen and (max-width: 1000px) {
+    img {
+        height: 400px;
+        width: 500px;
+        opacity: .6;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    img {
+        height: 500px;
+        width: 600px;
+        opacity: .6;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    #title,
+    .nav {
+        font-size: 25px;
+    }
+}
+
+@media screen and (min-width: 1500px) {
+    .person {
+        width: 280px;
+        height: 250px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .person {
+        width: 320px;
+        height: 250px;
+    }
+}
+
+@media screen and (min-width: 600px) {
+    nav {
+        font-size: x-large;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .card {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .login,
+    .signup {
+        border-width: none;
+        border-radius: none;
+        border-style: none;
+        box-shadow: none;
+        padding-top: none;
+        padding-bottom: none;
+        margin-left: none;
+        margin-right: none;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .form-input {
+        text-align: center;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        height: 50px;
+        margin-top: 15px;
+        width: 200px;
+    }
 }
