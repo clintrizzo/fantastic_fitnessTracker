@@ -1,60 +1,41 @@
-const router = require('express').Router();
-const user = require('../../models/user')
-router.post('/', async(req, res) => {
-    try {
-        const userData = await User.create(req.body);
+var express = require("express");
+var router = express.Router();
 
-        req.session.save(() => {
-            req.session.user_id = userData.id;
-            req.session.logged_in = true;
+const credential = {
+    email: "admin@gmail.com",
+    password: "admin123"
+}
 
-            res.status(200).json(userData);
-        });
-    } catch (err) {
-        res.status(400).json(err);
-    }
-});
-
-router.post('/login', async(req, res) => {
-    try {
-        const userData = await User.findOne({ where: { email: req.body.email } });
-
-        if (!userData) {
-            res
-                .status(400)
-                .json({ message: 'Incorrect email or password, please try again' });
-            return;
-        }
-
-        const validPassword = await userData.checkPassword(req.body.password);
-
-        if (!validPassword) {
-            res
-                .status(400)
-                .json({ message: 'Incorrect email or password, please try again' });
-            return;
-        }
-
-        req.session.save(() => {
-            req.session.user_id = userData.id;
-            req.session.logged_in = true;
-
-            res.json({ user: userData, message: 'You are now logged in!' });
-        });
-
-    } catch (err) {
-        res.status(400).json(err);
-    }
-});
-
-router.post('/logout', (req, res) => {
-    if (req.session.logged_in) {
-        req.session.destroy(() => {
-            res.status(204).end();
-        });
+// login user
+router.post('/login', (req, res) => {
+    if (req.body.email == credential.email && req.body.password == credential.password) {
+        req.session.user = req.body.email;
+        res.redirect('/route/dashboard');
+        //res.end("Login Successful...!");
     } else {
-        res.status(404).end();
+        res.end("Invalid Username")
     }
 });
+
+// route for dashboard
+router.get('/dashboard', (req, res) => {
+    if (req.session.user) {
+        res.render('dashboard', { user: req.session.user })
+    } else {
+        res.send("Unauthorize User")
+    }
+})
+
+// route for logout
+router.get('/logout', (req, res) => {
+    req.session.destroy(function(err) {
+        if (err) {
+            console.log(err);
+            res.send("Error")
+        } else {
+            res.render('base', { title: "Express", logout: "logout Successfully...!" })
+        }
+    })
+})
 
 module.exports = router;
