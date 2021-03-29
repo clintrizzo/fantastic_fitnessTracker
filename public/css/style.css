@@ -1,5 +1,7 @@
 .background {
-    background-color: cadetblue;
+    background-image: url(https://images.unsplash.com/photo-1584735935682-2f2b69dff9d2?ixid=MXwxMjA3fDB8MHxzZWFyY2h8NHx8cmVzaXN0YW5jZSUyMGJhbmRzfGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60);
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 p {
@@ -41,7 +43,6 @@ h5 {
 img {
     height: 750px;
     width: 800px;
-    opacity: .6;
 }
 
 .carousel-caption {
@@ -275,7 +276,7 @@ h3 {
     height: 50px;
     border-radius: 100%;
     display: block;
-    background: linear-gradient(45deg, rgb(62, 62, 110), rgb(144, 144, 209));
+    background: linear-gradient(45deg, rgb(247, 167, 48), rgb(236, 100, 9));
     transition: all 265ms ease-out;
 }
 
@@ -288,8 +289,8 @@ h3 {
     transform: scale(2.0);
     -ms-transform: scale(2.0);
     -webkit-transform: scale(2.0);
-    color: blue;
-    background: -webkit-linear-gradient(45deg, rgb(255, 255, 255), rgb(144, 144, 209));
+    color: orange;
+    background: -webkit-linear-gradient(45deg, rgb(247, 167, 48), rgb(236, 100, 9));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     transition: all 265ms ease-in;

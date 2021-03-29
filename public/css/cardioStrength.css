@@ -1,153 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin:ital@1&display=swap');
 body {
-  background-color: #7777;
+    background-image: url(https://images.unsplash.com/photo-1584735935682-2f2b69dff9d2?ixid=MXwxMjA3fDB8MHxzZWFyY2h8NHx8cmVzaXN0YW5jZSUyMGJhbmRzfGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60);
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
-.li-inline {
-  display: inline;
+div.jumbotron {
+    margin-top: 0px;
+    margin-bottom: 100px;
+    background-color: rgba(255, 255, 255, 0);
 }
 
-.navbar {
-  width: 100%;
-  position: relative;
-  }
-
-.nav-item {
-  margin: 30px;
-  margin-top: 1%;
-  display: inline;
-  float: right;
-  
+div.main {
+    background-color: rgba(255, 255, 255, 0);
 }
 
-.nav-item a {
-  color: #555;
+
+/* Add form styling */
+
+label[for="workout"] {
+    visibility: hidden;
 }
 
-.hero {
-  position: relative;
-  display: inline;
+div.add-workout {
+    width: 60%;
+    background-color: rgba(163, 162, 162, 0.541);
+    opacity: 1;
+    padding: 20px;
+    margin-bottom: 50px;
 }
 
-.app-title {
-  font-size: 3rem;
-  padding: 25px;
-  display: inline;
-  color: #038
+div.add-workout h2 {
+    font-size: 2rem;
+    font-family: 'Cabin', sans-serif;
+    padding-top: 20px;
 }
 
-.content {
-  max-width: px;
-  margin: auto;
-  padding: 10px;
-  
+
+/* workout list styling */
+
+div.workouts {
+    margin: 10px;
 }
 
-/* Dropdown Button */
-.dropbtnCardio {
-  background-color: red;
-  color: white;
-  padding: 16px;
-  font-size: 20px;
-  border: none;
-  cursor: pointer;
-  float: left;
-  display: inline;
-  postion: relative;
+div.workouts .workout-heading {
+    font-size: 2rem;
+    padding: 20px;
+    font-family: 'Cabin', sans-serif;
 }
 
-.dropbtnStrength {
-  background-color: red;
-  color: white;
-  padding: 16px;
-  font-size: 20px;
-  border: none;
-  cursor: pointer;
-  float: left;
-  display: inline;
-  position: relative;
+div.workout-col {
+    background-color: rgba(163, 162, 162, 0.541);
+    min-height: 300px;
 }
 
-.strengthForm {
-  float: left;
+li.workout-li {
+    background-color: rgba(163, 162, 162, 0.541);
+    list-style-type: none;
+    border-bottom: 1px solid gray;
 }
 
-.cardioForm {
-  float: left;
+ul.workouts {
+    margin: 0 0 20px 0;
+    padding: 0 0 20px 0;
 }
 
-/* Dropdown Content (Hidden by Default) */
-.btn-group {
-  display: none;
-  background-color: #f1f1f1;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
- 
+p {
+    color: white;
+    font-size: 100px;
 }
-
-.btn-group input {
-  float: right;
-  margin-left: 2px;
-  padding-bottom: 2px;
-}
-
-#cardioSubmit, #strengthSubmit {
-  color: red;
-  background-color: black;
-  position: absolute;
-  cursor: pointer;
-}
-
-#cardioSubmit:hover, #strengthSubmit:hover {
-  background-color: yellow;
-}
-
-/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
-.show {display:block;} -->
-
-/* Condition and Strength button placed in top-left corner of image */
-.top-left {
-  position: absolute;
-  top: 30px;
-  left: 16px;
-}
-
-/* Top right text */
-.top-right {
-  position: absolute;
-  right: 16px;
-  text-align: right;
-  font-size: 2rem;
-  font-weight: 900;
-  word-spacing: 10px;
-  letter-spacing: 1px;
-}
-
-.bottom-left {
-  position: absolute;
-  bottom: 150px;
-  left: 16px;
-  letter-spacing: 1px;
-  line-height: 20px
-}
-
-.top-right p {
-  font-size: 20px;
-  font-weight: normal;
-  word-spacing: 5px;
-  letter-spacing: 1px;
-  line-height: 5px;
-}
-
-.container {
-  position: relative;
-  text-align: left;
-  color: white;
-}
-
-.centered {
-  position: absolute;
-  top: 30px;
-  left: 300px;
-  
-}
-

@@ -4,95 +4,66 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Workout/Fantastic Fitness Tracker</title>
-  <link rel="stylesheet" href="/css/cardioStrength.css">
+  <title>Login/Fantastic Fitness Tracker</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+<link href="/css/cardioStrength.css" rel="stylesheet">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
 </head>
-<body>
-<head>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
-</head>
-  <div class="content">
-    <div class="container">
-      <div class="top-right">  ____ <br><br> OWN EVERY WORKOUT <br> ____ <br><br> <p> The best mobile fitness tracking </p> <p> experience, backed by the world's largest </p> <p> digital health and fitness community. </p> </div>
-      
-      <div class="bottom-left"> 
-        <font size="+1"> <strong> <u> TRACK EVERYTHING </u> </strong> </font>
-        <br>
-        Log any kind of workout using just 
-        <br>
-        your phone or with your favorite 
-        <br> 
-        device like Garmin or Apple Watch.
-        <br>
-        <br>
-        <font size="+1"> <strong> <u> GET SOCIAL </u> </strong> </font>
-        <br>
-        Find support and motivation from 
-        <br>
-        other fitness crushers, plus create challenges 
-        <br>
-        for you and your friends.
-        <br>
-        <br>
-        <font size="+1"> <strong> <u> TRAIN SMARTER </u> </strong> </font>
-        <br>
-        Analyze your data in the app or on the
-        <br>
-        web, then crush that workout or 
-        <br>
-        cardio using our adaptive training 
-        <br>
-        plans. 
-      </div>
-     
-      <!-- background image -->
- <img src="https://c4.wallpaperflare.com/wallpaper/259/859/646/chain-actor-the-rock-dwayne-johnson-dwayne-johnson-the-rock-hd-wallpaper-preview.jpg" alt="Rock" style="width:100%">
-       
-  <div class="top-left">   
-  <button onclick="cardiovascular()" class="dropbtnCardio"> CONDITION FITNESS </button>
-  <div id="myCardio" class="btn-group"> 
-    
-    <form class="cardioForm">
-    <p> Exercise: <input type="text" id="name" placeholder="Cardio"> </p>
-    <hr>
-    <p> Distance: <input type="text" id="distance" placeholder="Miles"> </p>
-    <hr>
-    <p> Duration: <input type="text" id="duration" placeholder="Time"> </p>
-    <hr>
-    <input type="submit" id="cardioSubmit" value="Submit" />
-    </form>
-      
-    </div>
-      </div>
-    
-    <div class="centered">
-      
-     <button onclick="weights()" class="dropbtnStrength"> STRENGTH FITNESS </button>
-  <div id="myStrength" class="btn-group">
-    
-    <form class="strengthForm">
-    <p> Exercise: <input type="text" id="exercise" placeholder="Muscle/Workout"> </p>
-    <hr>
-    <p> Weight: <input type="text" id="weight" placeholder="Pounds"> </p>
-    <hr>
-    <p> Sets: <input type="text" id="sets" placeholder="Number of Sets"> </p>
-    <hr>
-    <p> Reps: <input type="text" id="reps" placeholder="Repition"> </p>
-    <hr>
-    <p> Rest: <input type="text" id="rest" placeholder="Rest Time (min/sec)" </p>
-    <hr>
-      
-    <input type="submit" id="strengthSubmit" value="Submit" />
-    </form>
-      
-    
+<div class="container main">
+{{!-- Heading area --}}
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <p class="lead text-center">Keep Track of the workouts you've totally Crushed!</p>
         </div>
-       </div>
-      </div>
-     </div>
     </div>
-   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
-
-      <script ="/js/cardioStrength.js"></script>
-    </body>
-
+{{!-- Add workout form --}}
+    <div class="container add-workout">
+        <h2 class="text-center">Add description of your workout</h2>
+        <form class="create-form">
+            <div class="form-group">
+                <label for="workout">Workout name:</label>
+                <textarea id="workout" class="form-control" name="workout_name" rows="2" cols="15"></textarea>
+            </div>
+            <div class="form-row text-center">
+                <br>
+                <div class="col-12">
+                    <button class="btn btn-light add" type="submit">Add workout</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    {{!-- workout list area --}}
+    <div id="workout-list">
+        <div class="container workouts">
+            <div class="row pb-4">
+                <div class="col-md-6 col-sm-12">
+                    <div class="col-12 workout-col m-1">
+                        <h2 class="text-center workout-heading">Workouts to Crush</h2>
+                        <ul class="workouts">
+                            {{#each workouts}}
+                            {{#unless crushed}}
+                            {{> workouts/workout-block }}
+                            {{/unless}}
+                            {{/each}}
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-12">
+                    <div class="col-12 workout-col m-1">
+                        <h2 class="text-center workout-heading">Workouts Crushed</h2>
+                        <ul class="workouts">
+                            {{#each workouts}}
+                            {{#if crushed}}
+                            {{> workouts/workout-block }}
+                            {{/if}}
+                            {{/each}}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script="public\js\workout.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>

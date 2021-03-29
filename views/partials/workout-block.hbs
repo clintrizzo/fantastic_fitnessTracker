@@ -1,0 +1,17 @@
+{{!-- Individual workout list items with buttons --}}
+<li class="workout-li">
+    <div class="row p-3">
+        <div class="col-7">{{workout_name}}</div>
+        <div class="col-3">
+            {{#unless crushed}}
+            <button class="change-crushed btn btn-light btn-sm" data-id="{{id}}" data-crushed="{{crushed}}">
+                Crush
+            </button>
+            {{/unless}}
+        </div>
+        <div class="col-2">
+            <button class="delete-workout btn btn-light btn-sm" data-id="{{this.id}}"><i
+                    class="fas fa-trash  text-danger"></i></button>
+        </div>
+    </div>
+</li>

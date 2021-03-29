@@ -26,7 +26,7 @@ router.get('dashboard', (req, res) => {
 })
 
 // route for logout
-router.get('/ut', (req, res) => {
+router.get('/logout', (req, res) => {
     req.session.destroy(function(err) {
         if (err) {
             console.log(err);

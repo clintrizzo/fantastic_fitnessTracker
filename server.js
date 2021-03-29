@@ -44,7 +44,7 @@ app.get('/signup', (req, res) => { res.render("signup") });
 app.get('/aboutUs', (req, res) => { res.render("aboutUs") });
 app.get('/dashboard', (req, res) => { res.render("dashboard") });
 
-app.use(routes);
+app.use = (routes);
 
 sequelize.sync({ force: true }).then(() => {
     app.listen(PORT, () => console.log('Now listening to port" 3001'));
