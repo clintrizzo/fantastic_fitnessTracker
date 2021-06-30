@@ -1,5 +1,6 @@
 # Fantastic Fittness Tracker :muscle: :running:
 ## :bookmark_tabs: Table of Contents
+* [Description](#Description)
 * [Front-end](#Front-end)
 * [Back-end](#Back-end)
 * [Usage](#Usage)
