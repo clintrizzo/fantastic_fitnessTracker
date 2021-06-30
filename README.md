@@ -1,4 +1,12 @@
 # Fantastic Fittness Tracker :muscle: :running:
+## :bookmark_tabs: Table of Contents
+* [Front-end](#Front-end)
+* [Back-end](#Back-end)
+* [Usage](#Usage)
+* [Installation](#Installation)
+* [Test](#Test)
+* [Demo](#Demo)
+* [Contributors](#Contributors)
 ## :scroll: Description
 This Full-Stack project is a great app to track your daily fitness activities. When the user open the app, he will ask to login. When the user loged in he will be prompted to submit more information about what he wants to do so that he can keep track of his fitness activities. When the user is done, he can log out.
 Many technologies like express.js, cookies, sequilizing, node.js, mysql database environment are used to make the back-end of this app and handlebars are uesed to build the front-end part of the app.
@@ -6,14 +14,6 @@ Many technologies like express.js, cookies, sequilizing, node.js, mysql database
 ![Image2](https://user-images.githubusercontent.com/38770396/112918868-bf232380-90ba-11eb-8b4e-2d95727a0a8c.jpg)
 ![Image3](https://user-images.githubusercontent.com/38770396/112918874-c0ece700-90ba-11eb-8078-686c3b19c8a9.jpg)
 ![Image4](https://user-images.githubusercontent.com/38770396/112918878-c2b6aa80-90ba-11eb-867a-3bc8c04ecb66.jpg)
-## :bookmark_tabs: Table of Contents
-* [Front-end]
-* [Back-end]
-* [Usage]
-* [Installation]
-* [Test]
-* [Demo]
-* [Contributors]
 ## Front-end
 Handlebars are used along side with CSS and JS to build a responsive, good looking app.
 ## Back-end
